@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">Soonami</string>
+    <string name="search_button">I\'m feeling lucky</string>
+    <string name="search_help">TV Show, Movie, etc...</string>
+</resources>
