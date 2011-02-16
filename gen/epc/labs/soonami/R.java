@@ -11,6 +11,7 @@ public final class R {
     public static final class attr {
     }
     public static final class id {
+        public static final int progress=0x7f040002;
         public static final int query_button=0x7f040001;
         public static final int query_text=0x7f040000;
     }

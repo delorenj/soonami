@@ -18,4 +18,10 @@
     	android:layout_height="wrap_content" 
     	android:id="@+id/query_button" 
     	android:text="@string/search_button" />
+    <ProgressBar
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:max="100"
+    	android:id="@+id/progress"
+    	style="?android:attr/progressBarStyleLarge"	/>
 </LinearLayout>
