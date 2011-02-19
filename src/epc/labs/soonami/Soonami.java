@@ -2,13 +2,16 @@ package epc.labs.soonami;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class Soonami extends Activity {
@@ -40,8 +43,14 @@ public class Soonami extends Activity {
 	}
 
 	protected void executeQuery() {
+		ProgressBar pb = (ProgressBar) findViewById(R.id.progress);
+		pb.setVisibility(1);
 		EditText tv = (EditText) findViewById(R.id.query_text);
-		Log.i(TAG, "Querying for: " + tv.getText());
-		tv.setText("");
+		TorrentSearch query = new TorrentSearch();
+		query.setActivity(this);
+		query.execute(tv.getText().toString());
+		InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(tv.getWindowToken(), 0);
 	}
+	
 }
